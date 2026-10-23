@@ -70,7 +70,7 @@ class UzbekLatinImeService : InputMethodService() {
             "space" -> currentInputConnection?.commitText(" ", 1)
             "enter" -> {
                 val ic = currentInputConnection
-                if (ic != null && !ic.performEditorAction(currentInputEditorInfo?.imeOptions ?: 0)) ic.commitText("\\n", 1)
+                if (ic != null && !ic.performEditorAction(currentInputEditorInfo?.imeOptions ?: 0)) ic.commitText("\n", 1)
             }
             else -> {
                 val out = if (shifted && label.length == 1 && label[0].isLetter()) label.uppercase() else label
