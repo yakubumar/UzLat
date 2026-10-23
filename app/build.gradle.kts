@@ -2,9 +2,11 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
 }
+
 android {
     namespace = "uz.uzbeklatin.keyboard"
     compileSdk = 35
+
     defaultConfig {
         applicationId = "uz.uzbeklatin.keyboard"
         minSdk = 23
@@ -12,4 +14,14 @@ android {
         versionCode = 1
         versionName = "1.0"
     }
+
+    // Keep Java and Kotlin bytecode targets consistent for GitHub Actions.
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+kotlin {
+    jvmToolchain(17)
 }
